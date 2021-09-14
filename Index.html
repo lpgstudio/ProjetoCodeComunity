@@ -8,58 +8,65 @@
     <title>Sing Up Form</title>
 </head>
 <body>
-    <nav class="dp-menu">
-        <ul>
-            <li>
-                <a href="#">&#9776;</a>
-                <ul>
-                    <li><a href="Paginas/Home.html">Home</a></li>
-                    <li><a href="#">Sobre nós</a></li>
-                    <li><a href="#">Contatos</a></li>
-                </ul>
-            </li>
-         </ul>
-    </nav>
+    <header>
+        <div class="toggle" onclick="toggleMenu()"></div>
+        <nav class="dp-menu">
+            <ul class="menu">
+                <li><a href="Paginas/Home.html">Home</a></li>
+                <li><a href="#">Sobre nós</a></li>
+                <li><a href="#">Contatos</a></li>
+            </ul>
+        </nav>
+    </header>
     <main>
-        <h1>Create Account</h1>
-        <div class="social-media">
-            <a href="https://www.facebook.com/" target="_blank">
-                <img src="Imagens/facebook.png" alt="facebook">
-            </a>
-            <a href="https://www.google.com/accounts/Login?hl=pt-br" target="_blank">
-                <img src="Imagens/google.png" alt="google">
-            </a>
-            <a href="https://www.linkedin.com/" target="_blank"><img src="Imagens/linkedin.png" alt="linkedin">
-            </a>
-        </div> <!--Fim da div social media-->
+        <section class="login-container">
+            <h1>Create Account</h1>
+            <div class="social-media">
+                <a href="https://www.facebook.com/" target="_blank">
+                    <img src="Imagens/facebook.png" alt="facebook">
+                </a>
+                <a href="https://www.google.com/accounts/Login?hl=pt-br" target="_blank">
+                    <img src="Imagens/google.png" alt="google">
+                </a>
+                <a href="https://www.linkedin.com/" target="_blank"><img src="Imagens/linkedin.png" alt="linkedin">
+                </a>
+            </div> <!--Fim da div social media-->
 
-        <div class="alternativa">
-            <span>OR</span>
-        </div>
+            <div class="alternativa">
+                <span>OR</span>
+            </div>
 
-        <form action="">
-            <label for="name">
-                <span>Name</span> 
-                <input type="text" name="name" id="name" class="focus">
-            </label>
+            <form action="">
+                <label for="name" class="sr-only">Name</label>
+                <!-- <span>Name</span> -->
+                <input type="text" name="name" id="name" class="focus" placeholder="Name">
 
-            <label for="email">
-                <span>Email</span>
-                <input type="text" name="email" id="email" class="focus">
-            </label>
+                <label for="email" class="sr-only">E-mail</label>
+                <!-- <span>Email</span> -->
+                <input type="text" name="email" id="email" class="focus" placeholder="E-mail">
 
-            <label for="password">
-                <span>Password</span>
-                <input type="text" name="password" id="password" class="focus">
-            </label>
+                <label for="password" class="sr-only">Password</label>
+                <!-- <span>Password</span> -->
+                <input type="password" name="password" id="password" class="focus" placeholder="Password">
 
-            <input type="submit" value="Sing Up">
-        </form>
-    </main>
-    <section class="images">
-        <img src="Imagens/mobile.svg" alt="">
+                <input type="submit" value="Sing Up">
+            </form>
+        </section>
+        
+        <section class="images">
+            <img src="Imagens/mobile.svg" alt="">
         <div class="circle"></div>
-    </section>
+        </section>
+    </main>
+
+    <script>
+        function toggleMenu() {
+            var menuToggle = document.querySelector('.toggle');
+            var menu = document.querySelector('.menu');
+            menuToggle.classList.toggle('active');
+            menu.classList.toggle('active');
+        }
+    </script>
 </body>
 </html>
 

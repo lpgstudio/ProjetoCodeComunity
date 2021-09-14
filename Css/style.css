@@ -9,14 +9,53 @@
     font-family: "Poppins", sans-serif;
 }
 
+body{
+    width: 100%;
+    height: 100%;
+    background-color: #1a0a36;
+    color: white;
+    font-weight: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 /*Menu Lateral*/
-.dp-menu ul{
-    list-style-type: none;
-    background-color: #1a0a3609;
+header{
+    position: fixed;
+    top: 15px;
+    left: 20px;
+    z-index: 99999;
+}
+
+.toggle{
+    width: 40px;
+    height: 40px;
+    background: url(../imagens/menu.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 30px;
+    cursor: pointer;
+}
+
+.toggle.active{
+    background: url(../imagens/close.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 20px;
+    cursor: pointer;
+}
+
+.menu {
+    display:none;
+    transition: 0.5s
+}
+.menu.active{
+    display:block;
 }
 
 .dp-menu ul li{
-    display: inline;
+    display: block;
     position: relative;
 }
 
@@ -32,53 +71,29 @@
     background-color: #920cecda;
     transition: background 1s;
 }
-
-.dp-menu ul ul{
-    display: none;
-    left: 0;
-    position: absolute;
-}
-
-.dp-menu ul li:hover ul{
-    display: block;
-}
-
-.dp-menu ul ul{
-    width: 150px;
-}
-
-.dp-menu ul ul li a{
-    display: block;
-}
 /*fim menu lateral*/
-body{
-    background-color: #1a0a36;
-    color: white;
-    display: flex;
-    font-weight: 500px;
-    min-height: 100vh;
-    min-width: 100vw;
-}
 
 main{
-    width: 50vw;
+    width: 100vw;
+    height: 100vh;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
 }
 
-main h1{
+main .login-container{
+    width: 50%;
+    min-width: 360px;
+    text-align: center;
+}
+
+main .login-container h1{
     color: #9e72eb;
     font-size: 2.5rem;
     margin-bottom: 2.5rem;
     text-align: center;
-}
-
-main .social-media{
-    display: flex;
-    align-content: center;
-
 }
 
 main .social-media a{
@@ -105,7 +120,8 @@ main .alternativa span{
     position: relative;
 }
 
-main .alternativa span::before, main .alternativa span::after{
+main .alternativa span::before, 
+main .alternativa span::after{
     position: absolute;
     content: '';
     height: 1px;
@@ -118,28 +134,36 @@ main .alternativa span::before, main .alternativa span::after{
 main .alternativa span::after{
     left: 50px;
 }
+
+.sr-only{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin:  -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
 main form{
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-main form label{
-    display: flex;
-    flex-direction: column;
-}
-
-main form label span{
+/* main form span{
     font-size: 1.1rem;
     margin-top: 2rem;
-}
+} */
 
 main form input{
     background-color: #3E236B;
     width: 300px;
     height: 50px;
     padding: 0 0.5rem;
-    margin-top: 1rem;
+    margin-top: 1.5rem;
     outline: none;
     color:#B696EE;
     font-size: 1rem;
@@ -165,14 +189,12 @@ main form input[type="submit"]:hover{
 }
 
 section.images{
-    display: flex;
-    align-items: flex-end;
-    justify-content: flex-end;
-    padding: 4rem;
+    width: 50%;
 }
 
 section.images img{
     width: 100%;
+    padding-top: 50px;
 }
 
 section.images .circle {
@@ -190,7 +212,7 @@ section.images .circle {
     background-color: rgba(131, 54, 182, 0.658);
 }
 
-@media only screen and (min-width: 900px) and (max-width: 1200px) {
+@media screen and (min-width: 900px) and (max-width: 1200px) {
     section.images img {
         width: 110%;
     }
@@ -200,22 +222,12 @@ section.images .circle {
     }
 }
 
-@media only screen and (max-width: 900px) {
+@media screen and (max-width: 900px) {
     section.images {
         display: none;
-        visibility: hidden;
-    }
-
-    main {
-        width: 100vw;
     }
 }
-
-@media only screen and (max-width: 450px) {
-    main h1 {
-        font-size: 2rem;
-    }
-
+@media screen and (max-width: 450px) {
     main .alternative span {
         font-size: 0.8rem;
     }
