@@ -4,23 +4,40 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../Css/style.css">
+    <link rel="stylesheet" href="../Css/style-home.css">
     <title>Home</title>
 </head>
 <body>
+    <main>
     <header>
+        <h1>Code Comunity</h1>
+        <div>
+            <div class="toggle" onclick="toggleMenu()"></div>
         <nav class="dp-menu">
-            <ul>
-                <li>
-                    <a href="#">&#9776;</a>
-                    <ul>
-                        <li><a href="./Home.html">Home</a></li>
-                        <li><a href="#">Sobre nós</a></li>
-                        <li><a href="#">Contatos</a></li>
-                    </ul>
-                </li>
-             </ul>
+            <ul class="menu">
+                <li><a href="Home.html">Home</a></li>
+                <li><a href="#">Sobre nós</a></li>
+                <li><a href="#">Contatos</a></li>
+            </ul>
         </nav>
+    </div>
     </header>
+        
+
+
+
+
+
+    </main>
+
+
+    <script>
+        function toggleMenu() {
+            var menuToggle = document.querySelector('.toggle');
+            var menu = document.querySelector('.menu');
+            menuToggle.classList.toggle('active');
+            menu.classList.toggle('active');
+        }
+    </script>
 </body>
 </html>

@@ -18,15 +18,11 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
+
+    margin: 0 auto;
 }
 
 /*Menu Lateral*/
-header{
-    position: fixed;
-    top: 15px;
-    left: 20px;
-    z-index: 99999;
-}
 
 .toggle{
     width: 40px;
@@ -236,4 +232,6 @@ section.images .circle {
         font-size: 1rem;
     }
 }
-/*Fim pagina de lógin*/
+/*Fim pagina de login*/
+
+
