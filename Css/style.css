@@ -42,31 +42,6 @@ body{
     cursor: pointer;
 }
 
-.menu {
-    display:none;
-    transition: 0.5s
-}
-.menu.active{
-    display:block;
-}
-
-.dp-menu ul li{
-    display: block;
-    position: relative;
-}
-
-.dp-menu ul li a{
-    color: white;
-    text-decoration: none;
-    display: inline-block;
-    padding: 10px;
-    transition: background 1s;
-}
-
-.dp-menu ul li a:hover{
-    background-color: #920cecda;
-    transition: background 1s;
-}
 /*fim menu lateral*/
 
 main{
